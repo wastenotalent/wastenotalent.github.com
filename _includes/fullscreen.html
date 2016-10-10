@@ -40,11 +40,21 @@
     .screen_right_bottom_button{border:1px solid transparent; color: black; background:gold; font-size:60px; line-height:100px; position:absolute; bottom:0; right:0%; text-transform: uppercase;cursor:pointer; text-align:center; width:70%;}
     textarea:focus, input:focus{outline: none;}
 
+    @media (max-width: 800px) {
+        .screen_left{width: 100%;}
+        .screen_left, .screen_right{background: rgba(255,255,255,0.2);}
+        .screen_left_top_title{font-size: 60px; margin-bottom: -15px}
+        .screen_left_bottom_content{font-size:25px;}
+        .screen_right_bottom{top: -52%; left: -5%; height: 52%; width: 105%;}
+        .screen_right_bottom_button{font-size:20px; line-height:50px; position:absolute; bottom:0; right:0%; text-transform: uppercase;cursor:pointer; text-align:center; width:70%;}
+
+    }
+
+
     @media (max-width: 600px) {
         html, body{
             overflow: auto;
         }
-        .screen{ background-size: cover; }
         .screen_left{width: 100%; }
         .screen_left_top{ width:100%; height:50%; background: rgba(255,255,255,.5);}
         .screen_left_top_title{font-size: 36px; color: rgba(0,0,0,0.6); padding: 0; margin-left: 0; margin-bottom: 0; top: 45%; text-align: center; width: 100%; font-weight: bolder; text-transform: uppercase;}
@@ -53,6 +63,7 @@
         .screen_right_bottom{top: -102%; left: -5%; height: 52%; width: 105%;}
         .screen_right_bottom_button{font-size:20px; line-height:50px; position:absolute; bottom:0; right:0%; text-transform: uppercase;cursor:pointer; text-align:center; width:70%;}
     }
+
 </style>
 
 <script>
