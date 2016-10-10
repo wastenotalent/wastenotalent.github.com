@@ -27,7 +27,7 @@
 
     .screen{ background-size:cover; background-repeat:no-repeat; position:relative; background-image:url('/img/posts/{{ post.feature_image }}') }
 
-    .screen_left, .screen_right{ width:50%; height:100%; position:relative; }
+    .screen_left, .screen_right{ width:50%; height:100%; position:relative; background: rgba(255,255,255,.1);}
     .screen_left{ float:left; }
     .screen_left_top{ width:100%; height:40%; position:absolute; top:-50%; left:0; display:hidden; }
     .screen_left_top_title{  position:absolute; bottom:0; font-size:80px; color:white; padding:0 40px; margin-left:-3px; margin-bottom:-31px; }
@@ -40,7 +40,7 @@
     .screen_right_bottom_button{border:1px solid transparent; color: black; background:gold; font-size:60px; line-height:100px; position:absolute; bottom:0; right:0%; text-transform: uppercase;cursor:pointer; text-align:center; width:70%;}
     textarea:focus, input:focus{outline: none;}
 
-    @media (max-width: 800px) {
+    @media (max-width: 1000px) {
         .screen_left{width: 100%;}
         .screen_left, .screen_right{background: rgba(255,255,255,0.2);}
         .screen_left_top_title{font-size: 60px; margin-bottom: -15px}
@@ -51,7 +51,7 @@
     }
 
 
-    @media (max-width: 600px) {
+    @media (max-width: 700px) {
         html, body{
             overflow: auto;
         }
