@@ -1,0 +1,4 @@
+name: wastenotalent
+
+port: 7979
+destination: ../site

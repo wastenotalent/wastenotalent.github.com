@@ -1,0 +1,7 @@
+---
+layout: default
+var: this is landing variable use it with layout.var
+---
+{% for post in site.categories['pinned_fullscreen'] %}
+    {% include fullscreen.html %}
+{% endfor %}

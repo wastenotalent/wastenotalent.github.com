@@ -1,0 +1,71 @@
+
+<section class=screen style="">
+<div class=screen_left>
+    <div class=screen_left_top> <div class=screen_left_top_title>{{ post.title }}</div> </div>
+    <div class=screen_left_bottom> <div class=screen_left_bottom_content>{{ post.content }}</div> </div>
+</div>
+
+<div class=screen_right>
+    <div class=screen_right_top></div>
+    <div class=screen_right_bottom> <div class=screen_right_bottom_button>{{ post.button }}</div> </div>
+</div>
+</section>
+
+<style>
+    /* development
+    .screen_left{background: rgba(0,0,0,.5);} .screen_right{background: rgba(255,255,255,.5);} .screen_left_top{background: rgba(255,0,0,.5);} .screen_left_bottom{background: rgba(0,255,0,.5);} .screen_right_top{background: rgba(255,0,0,.5);} .screen_right_bottom{background: rgba(0,255,0,.5);}
+    */
+
+    .screen{ background-size:100%; background-repeat:no-repeat; position:relative; background-image:url('/img/posts/{{ post.feature_image }}') }
+
+    .screen_left, .screen_right{ width:50%; height:100%; position:relative; }
+    .screen_left{ float:left; }
+    .screen_left_top{ width:100%; height:40%; position:absolute; top:-50%; left:0; display:hidden; }
+    .screen_left_top_title{ text-shadow:0px -1px 0px rgba(0,0,0,.4); position:absolute; bottom:0; font-size:50px; color:white; padding:0 40px; margin-left:-3px; }
+    .screen_left_bottom{ border-top:1px solid white; width:100%; height:60%; position:absolute; top:40%; left:-100%; display:hidden; }
+    .screen_left_bottom_content{ position:absolute; top:0; font-size:16px; color:white; padding: 0 40px; }
+
+    .screen_right{ float:right; }
+    .screen_right_top{ width:100%; height:50%; position:absolute; top:-50%; right:0; display:hidden; }
+    .screen_right_bottom{ width:100%; height:50%; position:absolute; top:50%; right:0; display:hidden; }
+    .screen_right_bottom_button{ text-shadow:0px -1px 0px rgba(0,0,0,.4); background:rgba(125,32,213,0); font-size:30px; line-height:100px; position:absolute; top:20%; right:20%; color:#fffbe5; cursor:pointer; text-align:center; width:70%;}
+
+</style>
+
+<script>
+var header_fill = 90;
+var w = window.innerWidth;
+var h = window.innerHeight - header_fill;
+
+
+var els = document.getElementsByClassName("screen");
+
+window.onload = function() {
+    Array.prototype.forEach.call(els, function(el) {
+        el.style.height = h;
+        el.style.width = w;
+    });
+};
+
+window.onresize = function(event) {
+    var w = window.innerWidth;
+    var h = window.innerHeight ;
+
+    var els = document.getElementsByClassName("screen");
+
+    Array.prototype.forEach.call(els, function(el) {
+        el.style.height = h;
+        el.style.width = w;
+    });
+};
+
+$(document).ready(function(){
+    $(".screen").fadeIn(600);
+
+    $(".screen_left_top").fadeIn(500).animate({top: '0'});
+    $(".screen_left_bottom").fadeIn(600).animate({left: '0%'});
+
+    $(".screen_right_top").fadeIn(700).animate({top: '0%'});
+    $( ".screen_right_bottom_button" ).click(function() { $(".screen").animate({width:'80%'}) });
+})
+</script>
