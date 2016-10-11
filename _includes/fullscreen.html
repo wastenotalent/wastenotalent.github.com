@@ -95,7 +95,11 @@ window.onload = function() {
 };
 
 window.onresize = function(event) {
-    var header_fill = 90;
+    if (window.innerWidth < 1000){
+    var header_fill = 35;
+    } else {
+        header_fill = 90;
+    }
     var w = window.innerWidth;
     var h = window.innerHeight - header_fill ;
 
