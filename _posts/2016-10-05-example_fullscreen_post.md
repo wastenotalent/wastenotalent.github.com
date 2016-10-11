@@ -1,6 +1,6 @@
 ---
 feature_image:  dada.jpg
-button:         Ansökan
+button:         apply now
 when:           December 2016
 title:          Dada Da Luz Festival
 category:
